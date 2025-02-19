@@ -1,4 +1,4 @@
-pipeline {
+ho pipeline {
     agent any
 
     stages {
@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'C:\Users\DELL\AppData\Local\Microsoft\WindowsApps\python.exe --version'
+                bat echo 'Building'
             }
         }
 
         stage('Test') {
             steps {
-                bat echo 'pytest --junitxml_report_xml'
+                bat echo 'pytest'
             }
         }
 
