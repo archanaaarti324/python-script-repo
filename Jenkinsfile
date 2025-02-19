@@ -4,19 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                 git credentialsId: 'github-credentials', url: 'https://github.com/archanaaarti324/python-script-repo.git', branch: 'python'
+                git credentialsId: 'github-credentials', 
+                    url: 'https://github.com/archanaaarti324/python-script-repo.git', 
+                    branch: 'python'
             }
         }
 
         stage('Build') {
             steps {
-                bat echo 'Building'
+                bat 'echo "Building..."'
             }
         }
 
         stage('Test') {
             steps {
-                bat echo 'pytest --junitxml_report_xml'
+                bat 'echo "Running tests with pytest..."'
             }
         }
 
