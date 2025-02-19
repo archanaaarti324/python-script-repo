@@ -10,13 +10,13 @@ ho pipeline {
 
         stage('Build') {
             steps {
-                bat echo 'Building'
+                bat 'echo "Building"'
             }
         }
 
         stage('Test') {
             steps {
-                bat echo 'pytest'
+                bat 'echo "pytest"'
             }
         }
 
