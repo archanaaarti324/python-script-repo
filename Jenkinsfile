@@ -11,6 +11,7 @@ ho pipeline {
         stage('Build') {
             steps {
                 bat 'echo "Building"'
+
             }
         }
 
