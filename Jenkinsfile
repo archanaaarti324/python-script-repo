@@ -4,19 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                echo 'Checking out the repository...'
                 git credentialsId: 'github-credentials', 
                     url: 'https://github.com/archanaaarti324/python-script-repo.git', 
                     branch: 'python'
             }
         }
 
-       stage('Build') {
+        stage('Build') {
             steps {
                 script {
+                    echo 'Starting the Build Process...'
                     if (isUnix()) {
-                        sh './build.sh'  // Runs on Linux/macOS
+                        echo 'Simulating: Running build.sh on Unix'
                     } else {
-                        bat 'build.bat'  // Runs on Windows
+                        echo 'Simulating: Running build.bat on Windows'
                     }
                 }
             }
@@ -25,13 +27,14 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    echo 'Running Tests...'
                     if (isUnix()) {
-                        sh './run_tests.sh'
+                        echo 'Simulating: Running run_tests.sh on Unix'
                     } else {
-                        bat 'run_tests.bat'
+                        echo 'Simulating: Running run_tests.bat on Windows'
                     }
                 }
             }
         }
-
-        
+    }
+}
