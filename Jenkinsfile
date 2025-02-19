@@ -36,5 +36,17 @@ pipeline {
                 }
             }
         }
+		stage('Deploy') {
+            steps {
+                script {
+                    echo 'Running Tests...'
+                    if (isUnix()) {
+                        echo 'Simulating: Running deploy.sh on Unix'
+                    } else {
+                        echo 'Simulating: Running deploy.bat on Windows'
+                    }
+                }
+            }
+        }
     }
 }
