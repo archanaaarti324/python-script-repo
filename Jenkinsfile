@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/python-ci-cd.git'
+                 git credentialsId: 'github-credentials', url: 'https://github.com/archanaaarti324/python-script-repo.git', branch: 'python'
             }
         }
 
