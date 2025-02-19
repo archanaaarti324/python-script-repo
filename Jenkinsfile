@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat '"C:\\Users\\DELL\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe" --version'
+                bat echo 'Building'
             }
         }
 
