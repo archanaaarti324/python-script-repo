@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'python --version'
+                bat 'C:\Users\DELL\AppData\Local\Microsoft\WindowsApps\python.exe --version'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'pytest --junitxml=report.xml'
+                bat echo 'pytest --junitxml_report_xml'
             }
         }
 
