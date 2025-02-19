@@ -10,22 +10,28 @@ pipeline {
             }
         }
 
-        stage('Build') {
+       stage('Build') {
             steps {
-                bat """echo Building..."""
+                script {
+                    if (isUnix()) {
+                        sh './build.sh'  // Runs on Linux/macOS
+                    } else {
+                        bat 'build.bat'  // Runs on Windows
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat """echo Building..."""
+                script {
+                    if (isUnix()) {
+                        sh './run_tests.sh'
+                    } else {
+                        bat 'run_tests.bat'
+                    }
+                }
             }
         }
 
-        stage('Deploy') {
-            steps {
-                bat """echo Building..."""
-            }
-        }
-    }
-}
+        
