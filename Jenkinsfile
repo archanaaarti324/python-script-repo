@@ -12,19 +12,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'echo "Building..."'
+                bat 'echo Building...'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'echo "Running tests with pytest..."'
+                bat 'echo Running tests with pytest...'
             }
         }
 
         stage('Deploy') {
             steps {
-                bat 'echo "Deployment step: Copying files to server..."'
+                bat 'echo Deployment step: Copying files to server...'
             }
         }
     }
